@@ -15,7 +15,7 @@ class AlertData(BaseModel):
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 SENDER_EMAIL = "abdullahaydogan9296@gmail.com"
-SENDER_PASSWORD = "bayy ozul pfxp olun"
+SENDER_PASSWORD = "bayyozulpfxpolun"
 
 RECEIVER_EMAIL = "sehmusaltas47@gmail.com"
 
