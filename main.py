@@ -1,3 +1,4 @@
+import logging
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, EmailStr
 import smtplib
@@ -39,7 +40,11 @@ Mesaj: {alert.message}
         server.login(SENDER_EMAIL, SENDER_PASSWORD)
         server.send_message(msg)
         server.quit()
+
     except Exception as e:
+        # Hata detayını konsola yazdır
+        logging.error("E-posta gönderilemedi:", exc_info=True)
+        # Daha sonra FastAPI'de 500 dönecek
         raise RuntimeError(f"E-posta gönderilemedi: {str(e)}")
 
 @app.post("/alert/")
