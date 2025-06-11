@@ -42,9 +42,7 @@ Mesaj: {alert.message}
         server.quit()
 
     except Exception as e:
-        # Hata detayını konsola yazdır
-        logging.error("E-posta gönderilemedi:", exc_info=True)
-        # Daha sonra FastAPI'de 500 dönecek
+        print(f"Email gönderim hatası: {e}")  # stdout’a loglama
         raise RuntimeError(f"E-posta gönderilemedi: {str(e)}")
 
 @app.post("/alert/")
